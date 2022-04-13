@@ -1,0 +1,34 @@
+﻿@model IEnumerable<LDTBaiTapThucHanh.Models.KhoHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.XoaSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.XoaSP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ThemSP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ThemSP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ThemSP })
+        </td>
+    </tr>
+}
+
+</table>
